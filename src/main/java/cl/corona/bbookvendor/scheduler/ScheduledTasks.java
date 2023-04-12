@@ -35,7 +35,7 @@ public class ScheduledTasks {
 
     @Scheduled(cron = "${cron.expression}")
     public void scheduledBbook() throws InterruptedException {
-        LOG.info("{} : Generacion periodica para el envio de Colores  - {}",
+        LOG.info("{} : Generacion periodica para el envio de Proveedores  - {}",
                 dateTimeFormatter.format(LocalDateTime.now()));
 
         // Date exceptions
@@ -55,7 +55,7 @@ public class ScheduledTasks {
         LOG.info("Cantidad de Marcas para generar: {}", Bbookdimens.size());
 
         if (Bbookdimens.size() > 0) {
-            vendorService.EnvioDimens(Bbookdimens, "A");
+            vendorService.EnvioVendors(Bbookdimens, "A");
         }
 
         try {
@@ -70,7 +70,7 @@ public class ScheduledTasks {
         LOG.info("Cantidad de Marcas para generar: {}", Bbookdimens.size());
 
         if (Bbookdimens.size() > 0) {
-            vendorService.EnvioDimens(Bbookdimens, "C");
+            vendorService.EnvioVendors(Bbookdimens, "C");
         }
 
         try {
@@ -85,7 +85,7 @@ public class ScheduledTasks {
         LOG.info("Cantidad de Marcas para generar: {}", Bbookdimens.size());
 
         if (Bbookdimens.size() > 0) {
-            vendorService.EnvioDimens(Bbookdimens, "D");
+            vendorService.EnvioVendors(Bbookdimens, "D");
         }
     }
 }

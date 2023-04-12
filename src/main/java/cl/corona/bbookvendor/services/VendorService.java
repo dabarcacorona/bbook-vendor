@@ -34,7 +34,7 @@ public class VendorService {
 
     private static final Logger LOG = LoggerFactory.getLogger(VendorService.class);
 
-    public void EnvioDimens(List<BbookEnviaVendor> bbookvendor, String tipo) {
+    public void EnvioVendors(List<BbookEnviaVendor> bbookvendor, String tipo) {
 
         Gson g = new Gson();
         JsonCab jsoncab = null;
@@ -76,7 +76,7 @@ public class VendorService {
 
             LOG.error("Error al enviar datos", e);
 
-            responses = "No se pudo informar Marca";
+            responses = "No se pudo informar Proveedor";
         }
 
         for (BbookEnviaVendor row : bbookvendor) {
