@@ -41,51 +41,51 @@ public class ScheduledTasks {
         // Date exceptions
         LocalDate today = LocalDate.now();
         int count = 0;
-        List<BbookEnviaVendor> Bbookdimens = new ArrayList<>();
+        List<BbookEnviaVendor> Bbookvendor = new ArrayList<>();
 
         try {
             String statusBrand = "T";
-            Bbookdimens = (List<BbookEnviaVendor>) bbookenviovendorrepository.findAllByTranType("A");
+            Bbookvendor = (List<BbookEnviaVendor>) bbookenviovendorrepository.findAllByTranType("A");
 
         } catch (InvalidDataAccessResourceUsageException e) {
-            LOG.error("{}: Ocurrio un error al momento de rescatar las Marcas: ", e);
+            LOG.error("{}: Ocurrio un error al momento de rescatar los Proveedores: ", e);
             return;
         }
 
-        LOG.info("Cantidad de Marcas para generar: {}", Bbookdimens.size());
+        LOG.info("Cantidad de Marcas para generar: {}", Bbookvendor.size());
 
-        if (Bbookdimens.size() > 0) {
-            vendorService.EnvioVendors(Bbookdimens, "A");
-        }
-
-        try {
-            String statusBrand = "T";
-            Bbookdimens = (List<BbookEnviaVendor>) bbookenviovendorrepository.findAllByTranType("C");
-
-        } catch (InvalidDataAccessResourceUsageException e) {
-            LOG.error("{}: Ocurrio un error al momento de rescatar las Marcas: ", e);
-            return;
-        }
-
-        LOG.info("Cantidad de Marcas para generar: {}", Bbookdimens.size());
-
-        if (Bbookdimens.size() > 0) {
-            vendorService.EnvioVendors(Bbookdimens, "C");
+        if (Bbookvendor.size() > 0) {
+            vendorService.EnvioVendors(Bbookvendor, "A");
         }
 
         try {
             String statusBrand = "T";
-            Bbookdimens = (List<BbookEnviaVendor>) bbookenviovendorrepository.findAllByTranType("D");
+            Bbookvendor = (List<BbookEnviaVendor>) bbookenviovendorrepository.findAllByTranType("C");
 
         } catch (InvalidDataAccessResourceUsageException e) {
-            LOG.error("{}: Ocurrio un error al momento de rescatar las Marcas: ", e);
+            LOG.error("{}: Ocurrio un error al momento de rescatar los Proveedores: ", e);
             return;
         }
 
-        LOG.info("Cantidad de Marcas para generar: {}", Bbookdimens.size());
+        LOG.info("Cantidad de Marcas para generar: {}", Bbookvendor.size());
 
-        if (Bbookdimens.size() > 0) {
-            vendorService.EnvioVendors(Bbookdimens, "D");
+        if (Bbookvendor.size() > 0) {
+            vendorService.EnvioVendors(Bbookvendor, "C");
+        }
+
+        try {
+            String statusBrand = "T";
+            Bbookvendor = (List<BbookEnviaVendor>) bbookenviovendorrepository.findAllByTranType("D");
+
+        } catch (InvalidDataAccessResourceUsageException e) {
+            LOG.error("{}: Ocurrio un error al momento de rescatar los Proveedores: ", e);
+            return;
+        }
+
+        LOG.info("Cantidad de Marcas para generar: {}", Bbookvendor.size());
+
+        if (Bbookvendor.size() > 0) {
+            vendorService.EnvioVendors(Bbookvendor, "D");
         }
     }
 }
