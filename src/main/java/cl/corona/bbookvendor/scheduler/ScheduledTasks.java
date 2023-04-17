@@ -52,7 +52,7 @@ public class ScheduledTasks {
             return;
         }
 
-        LOG.info("Cantidad de Marcas para generar: {}", Bbookvendor.size());
+        LOG.info("Cantidad de Proveedores para generar: {}", Bbookvendor.size());
 
         if (Bbookvendor.size() > 0) {
             vendorService.EnvioVendors(Bbookvendor, "A");
@@ -67,7 +67,7 @@ public class ScheduledTasks {
             return;
         }
 
-        LOG.info("Cantidad de Marcas para generar: {}", Bbookvendor.size());
+        LOG.info("Cantidad de Proveedores para generar: {}", Bbookvendor.size());
 
         if (Bbookvendor.size() > 0) {
             vendorService.EnvioVendors(Bbookvendor, "C");
@@ -82,7 +82,7 @@ public class ScheduledTasks {
             return;
         }
 
-        LOG.info("Cantidad de Marcas para generar: {}", Bbookvendor.size());
+        LOG.info("Cantidad de Proveedores para generar: {}", Bbookvendor.size());
 
         if (Bbookvendor.size() > 0) {
             vendorService.EnvioVendors(Bbookvendor, "D");
